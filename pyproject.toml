@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rollout-review"
+version = "0.1.0"
+description = "Look through the episodes of LeRobot v2.1 datasets in a browser and judge them by hand."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+rollout-review = "rollout_review.review:main"
+
+[tool.setuptools]
+packages = ["rollout_review"]
+
+[tool.setuptools.package-data]
+rollout_review = ["index.html"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint.isort]
+force-single-line = true
+force-sort-within-sections = true

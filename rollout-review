@@ -1,0 +1,4 @@
+#!/bin/bash
+# rollout-review without installing it (standard library only).
+D=$(dirname "$(readlink -f "$0")")
+PYTHONPATH="$D${PYTHONPATH:+:$PYTHONPATH}" exec python3 -m rollout_review "$@"
